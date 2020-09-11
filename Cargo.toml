@@ -1,0 +1,33 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+name                                    = "vfs-clgit"
+version                                 = "0.0.0-git"
+authors                                 = ["MaulingMonkey <git@maulingmonkey.com>"]
+repository                              = "https://github.com/MaulingMonkey/vfs-clgit.git"
+documentation                           = "https://docs.rs/vfs-clgit/"
+edition                                 = "2018"
+license                                 = "Apache-2.0 OR MIT"
+#readme                                  = "Readme.md"
+description                             = "vfs-clgit: Virtual FileSystem abstractions for git repositories"
+keywords                                = ["vfs", "virtual", "filesystem", "git", "vcs"]
+categories                              = ["filesystem"]
+exclude = [
+    ".vscode/*",
+    "build.rs",     # just use docs.rs
+]
+
+[features]
+default                                 = ["vfs04"]
+
+[dependencies]
+git                                     = { package = "clgit", version = "0.1.1" }
+#git                                     = { package = "clgit", version = "0.0.0-git", path = "../clgit" }
+vfs04                                   = { package = "vfs", version = "0.4", optional = true }
+
+[badges]
+travis-ci                               = { repository = "MaulingMonkey/vfs-clgit", branch = "master" }
+
+[package.metadata.docs.rs]
+all-features = true
+rustc-args = ["--cfg", "external_doc"]
