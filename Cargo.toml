@@ -2,7 +2,7 @@
 
 [package]
 name                                    = "vfs-clgit"
-version                                 = "0.0.0-git"
+version                                 = "0.1.0"
 authors                                 = ["MaulingMonkey <git@maulingmonkey.com>"]
 repository                              = "https://github.com/MaulingMonkey/vfs-clgit.git"
 documentation                           = "https://docs.rs/vfs-clgit/"
